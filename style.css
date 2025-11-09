@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body,
+html {
+  height: 100%;
+  font-family: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    sans-serif;
+  background: hsl(212 45% 89%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  line-height: 1.4;
+  color: hsl(218 44% 22%);
+}
+@font-face {
+  font-family: "outfit-bold";
+  src: url("fonts/Outfit-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "outfit-light";
+  src: url("fonts/Outfit-Light.ttf") format("truetype");
+}
+
+/* CARD: responsive width, no fixed height */
+.card {
+  width: min(92vw, 345px); /* adapts to viewport, max 345px */
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(33, 47, 60, 0.06);
+  border: 1px solid hsl(212 45% 89%);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+}
+
+/* QR image: fluid and preserves aspect ratio */
+.qr img {
+  display: block;
+  width: min(90%, 300px); /* up to 300px, but shrinks on small screens */
+  height: auto;
+  border-radius: 10px;
+  margin-left: 12px;
+}
+
+/* Text */
+.content {
+  text-align: center;
+  padding: 0 6px;
+}
+.content h1 {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem; /* uses rem for scalability */
+  margin-top: 6px;
+}
+.content p {
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: hsl(216 15% 48%);
+  margin-top: 10px;
+  letter-spacing: 0.3px;
+}
+
+/* Small screen adjustments */
+@media (max-width: 360px) {
+  .card {
+    padding: 16px;
+    border-radius: 12px;
+  }
+  .content h1 {
+    font-size: 1rem;
+  }
+  .content p {
+    font-size: 0.9rem;
+  }
+}
